@@ -10,7 +10,7 @@
 
 using namespace std;
 
-typedef vector<shared_ptr<Shape>> Collection;
+using Collection = vector<shared_ptr<Shape>>;
 
 bool sortByArea(shared_ptr<Shape> first, shared_ptr<Shape> second)
 {
@@ -35,16 +35,16 @@ bool areaLessThan10(shared_ptr<Shape> s)
 
 void printCollectionElements(const Collection& collection)
 {
-    for(Collection::const_iterator it = collection.begin(); it != collection.end(); ++it)
-        if(*it)
-            (*it)->print();
+    for(const auto & element : collection)
+        if(element)
+            element->print();
 }
 
 void printAreas(const Collection& collection)
 {
-    for(vector<shared_ptr<Shape>>::const_iterator it = collection.begin(); it != collection.end(); ++it)
-        if(*it)
-            cout << (*it)->getArea() << std::endl;
+    for(const auto & element : collection)
+        if(element)
+            cout << element->getArea() << std::endl;
 }
 
 void findFirstShapeMatchingPredicate(const Collection& collection,

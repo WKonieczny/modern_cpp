@@ -2,11 +2,16 @@
 #include <math.h>
 #include <iostream>
 
-Circle::Circle(double r)
-    : r_(r)
-{}
+Circle::Circle(double r) : r_(r)
+ , Shape::Shape(Color::Green){}
+
+// Circle::Circle(double r, Color color )
+//     : r_(r),
+//      Shape::Shape(color){}
+// }
 
 Circle::Circle(const Circle & other)
+: Shape(other)
 {
     r_ = other.getRadius();
 }
@@ -18,6 +23,7 @@ double Circle::getArea() const
 
 double Circle::getPerimeter() const
 {
+    // static_assert(M_PI==3.14);
     return 2 * M_PI * r_;
 }
 
