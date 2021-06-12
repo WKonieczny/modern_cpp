@@ -5,7 +5,7 @@
 class Rectangle : public Shape
 {
 public:
-using Shape::Shape
+using Shape::Shape;
     Rectangle(double x, double y);
     Rectangle(const Rectangle & other);
 
@@ -21,3 +21,4 @@ private:
     double x_;
     double y_;
 };
+

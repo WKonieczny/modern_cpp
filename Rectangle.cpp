@@ -3,8 +3,7 @@
 
 Rectangle::Rectangle(double x, double y)
     : x_(x),
-      y_(y),
-    Shape(Color::Red)
+      y_(y)
 {
 }
 

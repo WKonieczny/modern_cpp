@@ -7,6 +7,7 @@
 #include "Rectangle.hpp"
 #include "Square.hpp"
 #include "Circle.hpp"
+#include "own_ptr.hpp"
 
 using namespace std;
 
@@ -65,6 +66,9 @@ void findFirstShapeMatchingPredicate(const Collection& collection,
 
 int main()
 {
+    OwnPointer<Circle> a(new Circle(1.0));
+    a->print();
+    auto b = std::move(a);
     Collection shapes;
     shapes.push_back(make_shared<Circle>(2.0));
     shapes.push_back(make_shared<Circle>(3.0));
