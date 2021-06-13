@@ -14,7 +14,8 @@ public:
     Shape(){};
     Shape(Color color);
 
-    Shape(const Shape& other);
+    Shape(const Shape& other) = default ;
+    Shape(Shape&& other) = default ;
     virtual double getArea() const = 0;
     virtual double getPerimeter() const = 0;
     virtual void print() const;

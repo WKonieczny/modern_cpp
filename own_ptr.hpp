@@ -2,13 +2,11 @@
 template <typename T>
 class OwnPointer {
 private:
-T* ptr_;
+T* ptr_=nullptr;
 
 public: 
 // friend class OwnPointer<T>;
-OwnPointer(T* ptr) {
-    ptr_ = ptr;
-}
+OwnPointer(T* ptr) : ptr_(ptr) {}
 OwnPointer(const OwnPointer& ptr) = delete;
 OwnPointer(OwnPointer<T> && other_ptr) noexcept {
     if(ptr_)

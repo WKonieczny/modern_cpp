@@ -7,7 +7,8 @@ class Rectangle : public Shape
 public:
 using Shape::Shape;
     Rectangle(double x, double y);
-    Rectangle(const Rectangle & other);
+    Rectangle(const Rectangle & other) = default;
+    Rectangle(Rectangle && other) = default;
 
     double getArea() const;
     double getPerimeter() const;

@@ -7,6 +7,3 @@ void Shape::print() const
 }
 
 Shape::Shape(Color color) : color_(color){}
-Shape::Shape(const Shape& shape) {
-    this->color_=shape.color_;
-}

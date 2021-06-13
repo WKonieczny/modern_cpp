@@ -67,6 +67,7 @@ void findFirstShapeMatchingPredicate(const Collection& collection,
 int main()
 {
     OwnPointer<Circle> a(new Circle(1.0));
+    // std::unique_ptr<Circle> a(new Circle(1.0));
     a->print();
     auto b = std::move(a);
     Collection shapes;
